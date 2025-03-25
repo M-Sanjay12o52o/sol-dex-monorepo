@@ -4,11 +4,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@components/ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@components/ui/dropdown-menu";
 import { Button } from "@components/ui/button";
-import { LogOut, Settings, User } from "lucide-react";
+import { LayoutDashboardIcon, LogOut, Settings, User } from "lucide-react";
 import { useSession } from "next-auth/react";
 // import { SignOut } from "./auth/server/signout-button";
 // import { signOut } from "../../auth"; // using this in client component throws error
 import { SignOut } from "@components/auth/client/signout-button"
+import Link from "next/link";
 
 
 export default function UserAvatar() {
@@ -37,6 +38,12 @@ export default function UserAvatar() {
                 <DropdownMenuItem className="cursor-pointer">
                     <User className="mr-2 h-4 w-4" />
                     Profile
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                    <LayoutDashboardIcon className="mr-2 h-4 w-4" />
+                    <Link href="/dashboard">
+                        Dashbaord
+                    </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
                     <Settings className="mr-2 h-4 w-4" />

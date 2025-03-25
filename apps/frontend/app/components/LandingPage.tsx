@@ -22,7 +22,6 @@ import {
     Table,
     User,
 } from "lucide-react";
-import Header from "@components/Navbar";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
@@ -125,7 +124,7 @@ const LandingPage: React.FC = () => {
                         Powered by Helius Webhooks - Seamlessly integrate blockchain data.
                     </p>
                     <p className="text-xs mt-2">
-                        © 2025 Your Company Name. All rights reserved.
+                        © 2025 sol-dex. All rights reserved.
                     </p>
                 </div>
             </div>
@@ -158,7 +157,7 @@ const LandingPage: React.FC = () => {
                                         <Button
                                             size="lg"
                                             onClick={() => router.push("/signup")}
-                                            className="group"
+                                            className="group cursor-pointer"
                                         >
                                             Get Started
                                             <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
@@ -167,6 +166,7 @@ const LandingPage: React.FC = () => {
                                             variant="outline"
                                             size="lg"
                                             onClick={() => router.push("/signin")}
+                                            className="cursor-pointer w-32"
                                         >
                                             Sign In
                                         </Button>
@@ -441,7 +441,7 @@ const LandingPage: React.FC = () => {
                             <Button
                                 size="lg"
                                 onClick={() => router.push("/signup")}
-                                className="group"
+                                className="group cursor-pointer"
                             >
                                 Get Started for Free
                                 <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />

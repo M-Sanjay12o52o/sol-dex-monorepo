@@ -1,10 +1,16 @@
+"use client"
 
 import React from "react";
 import { Database, Github } from "lucide-react";
 import Link from "next/link";
 import UserAvatar from "./UserAvatar";
+import { useSession } from "next-auth/react";
 
 const Header: React.FC = () => {
+    const { data: session, status } = useSession();
+
+    if (status === "loading") return <div>Loading...</div>
+
     return (
         <header className="w-full h-16 px-6 flex items-center justify-between transition-all duration-300 ease-apple bg-transparent">
             <Link href="/" className="flex items-center space-x-2 animate-fade-in">
@@ -22,7 +28,11 @@ const Header: React.FC = () => {
                     <Github className="h-4 w-4" />
                     <span>GitHub</span>
                 </a>
-                <UserAvatar />
+                {
+                    session && (
+                        <UserAvatar />
+                    )
+                }
             </div>
         </header>
     );
