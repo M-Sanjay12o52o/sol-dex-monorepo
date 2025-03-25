@@ -5,10 +5,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@components/ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@components/ui/dropdown-menu";
 import { Button } from "@components/ui/button";
 import { LogOut, Settings, User } from "lucide-react";
-import { SignOut } from "./auth/client/signout-button";
 import { useSession } from "next-auth/react";
 // import { SignOut } from "./auth/server/signout-button";
 // import { signOut } from "../../auth"; // using this in client component throws error
+import { SignOut } from "@components/auth/client/signout-button"
 
 
 export default function UserAvatar() {
@@ -20,11 +20,10 @@ export default function UserAvatar() {
     if (!session?.user) return null;
 
     return (
-        // TODO: get session.user and session.image
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="p-0 rounded-full">
-                    <Avatar className="h-10 w-10">
+                    <Avatar className="h-10 w-10 cursor-pointer">
                         <AvatarImage src={session.user.image || ""} alt={session.user.name || "User"} />
                         <AvatarFallback>{session.user.name?.charAt(0) || "U"}</AvatarFallback>
                     </Avatar>
@@ -43,11 +42,11 @@ export default function UserAvatar() {
                     <Settings className="mr-2 h-4 w-4" />
                     Settings
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer text-red-500" onSelect={() => SignOut()}>
+                <DropdownMenuItem className="cursor-pointer text-red-500">
                     <LogOut className="mr-2 h-4 w-4" />
-                    Sign Out
+                    <SignOut />
                 </DropdownMenuItem>
             </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu >
     );
 }

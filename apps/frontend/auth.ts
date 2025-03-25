@@ -21,8 +21,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         clientId: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
     })],
+    callbacks: {
+        // TODO: Make user signin with the same oauth as first time.
+        async redirect({ url, baseUrl }) {
+            return baseUrl;
+        }
+    },
     pages: {
-        signIn: "/login",
+        signIn: "/",
         // TODO: Create signout and error page
         signOut: "/signout",
         error: "error"
