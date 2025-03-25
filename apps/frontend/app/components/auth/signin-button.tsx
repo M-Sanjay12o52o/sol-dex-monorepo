@@ -1,14 +1,31 @@
 import { signIn } from "../../../auth";
 
-export function SignIn() {
+export default function SignIn() {
     return (
-        <form
-            action={async () => {
+        <div>
+            <form action={async () => {
                 "use server"
-                await signIn()
-            }}
-        >
-            <button type="submit">Sign in</button>
-        </form>
+                await signIn("google")
+            }}>
+                <button
+                    className="cursor-pointer"
+                    type="submit">
+                    Signin with Google
+                </button>
+            </form>
+            <form
+                action={async () => {
+                    "use server"
+                    await signIn("github")
+                }}
+            >
+                <button
+                    className="cursor-pointer"
+                    type="submit"
+                >
+                    Signin with GitHub
+                </button>
+            </form>
+        </div>
     )
 }

@@ -1,10 +1,24 @@
-import SignIn from "./components/sign-in";
+import { SignOut } from "@components/auth/signout-button";
+import SignIn from "@components/auth/signin-button";
+import UserAvatar from "@components/UserAvatar";
+import { auth } from "auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
   return (
     <div>
-      <h1>Hello World</h1>
-      <SignIn />
+      {
+        !session ? (
+          <SignIn />
+        ) : (
+          <>
+            <UserAvatar />
+            <h1>Hello World</h1>
+            <SignOut />
+          </>
+        )
+      }
     </div>
   );
 }
