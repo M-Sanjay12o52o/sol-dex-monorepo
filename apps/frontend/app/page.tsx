@@ -1,10 +1,14 @@
-import { SignOut } from "@components/auth/signout-button";
-import SignIn from "@components/auth/signin-button";
+// import { SignOut } from "@components/auth/server/signout-button";
+import { SignOut } from "@components/auth/client/signout-button"
+import SignIn from "@components/auth/server/signin-button";
 import UserAvatar from "@components/UserAvatar";
-import { auth } from "auth";
+import { useSession, signOut } from "next-auth/react";
+import { auth } from "../auth"
 
 export default async function Home() {
+  // const session = useSession();
   const session = await auth();
+  console.log("next-auth/react session: ", session);
 
   return (
     <div>
@@ -15,7 +19,11 @@ export default async function Home() {
           <>
             <UserAvatar />
             <h1>Hello World</h1>
+            {/* <SignOut /> */}
             <SignOut />
+            {/* <button>
+              Sign Out button from next-auth/react
+            </button> */}
           </>
         )
       }
