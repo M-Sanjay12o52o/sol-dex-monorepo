@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@components/ui/card";
-import { Progress } from "@components/ui/progress";
-import { Button } from "@components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import Link from "next/link";
 
 interface StatusIndicatorProps {
     selectedOptions: string[];
@@ -58,6 +59,10 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({ selectedOptions, conn
                         <p className="text-muted-foreground">
                             All selected blockchain data has been successfully indexed.
                         </p>
+
+                        <div>
+                            <Link href={"/view"}>View Index Data</Link>
+                        </div>
                     </div>
                 )}
                 {status === "error" && (

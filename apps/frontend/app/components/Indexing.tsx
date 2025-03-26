@@ -2,15 +2,21 @@
 
 
 import React, { useState } from "react";
-import StatusIndicator from "@components/StatusIndicator";
+import StatusIndicator from "@/components/StatusIndicator";
+import { useRouter } from "next/navigation";
 
 interface OptionConfig {
     id: string;
     configValue?: string;
 }
 
-const IndexingPage: React.FC = () => {
+interface IndexingOptionsProps {
+    onSelect: (options: { id: string; configValue?: string }[]) => void;
+}
+
+const IndexingPage: React.FC<IndexingOptionsProps> = ({ onSelect }) => {
     const [selectedOptions, setSelectedOptions] = useState<OptionConfig[]>([]);
+    const router = useRouter();
 
     // Extract just the IDs for the StatusIndicator
     const optionIds = selectedOptions.map(option => option.id);
@@ -20,7 +26,7 @@ const IndexingPage: React.FC = () => {
     }
 
     const handleReset = () => {
-
+        router.push("/connect");
     }
 
     return (

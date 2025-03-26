@@ -1,17 +1,20 @@
+"use client";
 
 import React, { useEffect, useState } from "react";
-import DataDisplay from "@components/DisplayData";
+import DataDisplay from "@/components/DataDisplay";
 
 interface OptionConfig {
     id: string;
     configValue?: string;
 }
 
-const DisplayData: React.FC = () => {
+const DisplayPage: React.FC = () => {
     const [selectedOptions, setSelectedOptions] = useState<OptionConfig[]>([]);
 
     useEffect(() => {
         const options = localStorage.getItem("selectedOptions");
+        console.log("component DisplayData: ", options);
+
         if (options) {
             setSelectedOptions(JSON.parse(options));
         }
@@ -31,4 +34,4 @@ const DisplayData: React.FC = () => {
     );
 };
 
-export default DisplayData;
+export default DisplayPage;

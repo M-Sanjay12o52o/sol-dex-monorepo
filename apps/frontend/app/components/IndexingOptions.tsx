@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import { Card, CardContent } from "@components/ui/card";
-import { Button } from "@components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Check, ChevronRight, Coins, Layers, PieChart, TagIcon, Settings, Database, Activity, Table } from "lucide-react";
 import { useToast } from "hooks/use-toast";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
-import { Label } from "@components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 export interface IndexOption {
     id: string;

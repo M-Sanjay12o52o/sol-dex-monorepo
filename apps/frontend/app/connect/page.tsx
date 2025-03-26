@@ -1,4 +1,4 @@
-import ConnectDatabase from '@components/ConnectDatabase'
+import ConnectDatabase from '@/components/ConnectDatabase'
 import { FC } from 'react'
 
 interface PageProps {

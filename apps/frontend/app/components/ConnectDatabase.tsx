@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import PostgresForm from "@components/PostgresForm";
+import PostgresForm from "@/components/PostgresForm";
 import { useSession } from "next-auth/react";
 
 const ConnectDatabase: React.FC = () => {

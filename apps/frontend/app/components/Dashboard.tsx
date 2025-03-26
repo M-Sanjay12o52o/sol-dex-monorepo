@@ -8,8 +8,8 @@ import {
     CardFooter,
     CardHeader,
     CardTitle
-} from "@components/ui/card";
-import { Button } from "@components/ui/button";
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
     BarChart,
     Bar,
@@ -35,8 +35,8 @@ import {
     Clock,
     Users
 } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 

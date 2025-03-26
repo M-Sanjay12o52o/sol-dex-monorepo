@@ -1,4 +1,4 @@
-import OptionsPage from '@components/Options'
+import OptionsPage from '@/components/Options'
 import { FC } from 'react'
 
 interface PageProps {

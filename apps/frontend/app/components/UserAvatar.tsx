@@ -1,14 +1,14 @@
 "use client"
 
 // import { auth } from "../../auth";
-import { Avatar, AvatarFallback, AvatarImage } from "@components/ui/avatar";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@components/ui/dropdown-menu";
-import { Button } from "@components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 import { LayoutDashboardIcon, LogOut, Settings, User } from "lucide-react";
 import { useSession } from "next-auth/react";
 // import { SignOut } from "./auth/server/signout-button";
 // import { signOut } from "../../auth"; // using this in client component throws error
-import { SignOut } from "@components/auth/client/signout-button"
+import { SignOut } from "@/components/auth/client/signout-button"
 import Link from "next/link";
 
 

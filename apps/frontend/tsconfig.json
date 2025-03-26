@@ -1,7 +1,7 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES5",
     "module": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
@@ -17,8 +17,8 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["app/components/*"],
-      "@utils/*": ["app.utils/*"]
+      "@/components/*": ["app/components/*"],
+      "@/lib/*": ["app/components/lib/*"]
     },
     "types": ["node", "next", "next-auth"],
     "plugins": [

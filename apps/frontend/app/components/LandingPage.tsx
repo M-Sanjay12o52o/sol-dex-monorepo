@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from "@components/ui/button";
-import { Card, CardContent } from "@components/ui/card";
-import { Separator } from "@components/ui/separator";
-import { Badge } from "@components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 import {
     Database,
     Layers,
@@ -96,7 +96,7 @@ const LandingPage: React.FC = () => {
                     </Button>
 
                     <Button asChild variant="outline" className="flex items-center gap-2">
-                        <Link href="/status">
+                        <Link href="/index">
                             <Activity className="h-5 w-5 text-indigo-600" />
                             Indexing
                         </Link>
