@@ -79,6 +79,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
 }
 
 function TableCell({ className = "", children, ...props }: React.ComponentProps<"td">) {
+
   return (
     <td
       data-slot="table-cell"
@@ -87,7 +88,9 @@ function TableCell({ className = "", children, ...props }: React.ComponentProps<
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </td>
   )
 }
 
